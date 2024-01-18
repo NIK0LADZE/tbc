@@ -5,7 +5,7 @@
 
 header {
   width: 100%;
-  background-color: rgb(43,43,43);
+  background-color: #1a1e1f;
   justify-content: center;
   display: flex;
   position: fixed;
@@ -18,7 +18,7 @@ header {
     align-items: center;
     display: flex;
     width: 80%;
-    background-color: rgb(43,43,43);
+    background-color: #1a1e1f;
     padding: 20px 0px;
   }
 
@@ -47,6 +47,7 @@ header {
   }
 
   img{
+    padding-top: 89px;
     width: 100%;
   }
   
@@ -77,16 +78,14 @@ header {
   .container2 {
     background-color: rgb(43,43,43);
     margin: auto;
-    padding: 10px;
     color: white;
     padding: 50px 20px
-    
   }
 
 .text3 {
     position: center;
     font-size: 30px;
-    margin-left: auto;
+    margin-left: 140px;
     margin-right: auto;
     width: 800px;
     padding: 20px 10px;
@@ -96,7 +95,7 @@ header {
     color: rgb(0,174,243);
     text-decoration: none;
     font-size: 25px;
-    padding-left: 255px;
+    margin-left: 150px;
 }
 
 .container2 a:hover {
@@ -112,10 +111,31 @@ header {
 }
 
 .container3 p {
-  padding-left: 255px;
+  margin-left: 150px;
   font-size: 28px;
 }
 
 .flex-container {
   display: flex;
+}
+
+.grid-container {
+  display: grid;
+  gap: 50px 100px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  padding-top: 70px;
+}
+
+.grid-item {
+  height: 400px;
+  width: 80%;
+  background-color: #161616;
+  border-radius: 5px;
+  border: 1px solid rgb(85, 85, 85);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 40%;
 }
