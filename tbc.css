@@ -110,7 +110,7 @@ header {
     padding: 50px 20px
 }
 
-.container3 p {
+.courses {
   margin-left: 150px;
   font-size: 28px;
 }
@@ -120,22 +120,57 @@ header {
 }
 
 .grid-container {
+  width: 80%;
+  margin-left: 140px;
   display: grid;
-  gap: 50px 100px;
+  gap: 20px;
   grid-template-columns: auto auto auto;
   padding: 10px;
   padding-top: 70px;
 }
 
 .grid-item {
-  height: 400px;
-  width: 80%;
+  height: 450px;
+  width: 90%;
   background-color: #161616;
   border-radius: 5px;
   border: 1px solid rgb(85, 85, 85);
 }
 
 .grid-item img {
+  padding: 0;
   width: 100%;
   height: 40%;
+}
+
+.name {
+  position: relative;
+  font-size: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+}
+
+.registration_details {
+  position: relative;
+  font-size: 15px;
+  padding-left: 25px;
+  padding-top: 25px;
+}
+
+.course_details {
+  position: absolute;
+  text-decoration: none;
+  font-size: 20px;
+  padding-left: 25px;
+  padding-top: 110px;
+  color: rgb(0,174,243);
+}
+
+.high_course_details {
+  position: absolute;
+  text-decoration: none;
+  font-size: 20px;
+  padding-left: 25px;
+  padding-top: 83px;
+  color: rgb(0,174,243);
 }
