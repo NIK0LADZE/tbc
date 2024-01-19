@@ -85,11 +85,8 @@ header {
 }
 
 .text3 {
-  position: center;
   font-size: 30px;
-  margin-left: 140px;
   margin-right: auto;
-  width: 800px;
   padding: 20px 10px;
 }
 
@@ -97,7 +94,6 @@ header {
   color: rgb(0, 174, 243);
   text-decoration: none;
   font-size: 25px;
-  margin-left: 150px;
 }
 
 .container2 a:hover {
@@ -113,7 +109,6 @@ header {
 }
 
 .courses {
-  margin-left: 150px;
   font-size: 28px;
 }
 
@@ -122,30 +117,32 @@ header {
 }
 
 .grid-container {
-  width: 80%;
-  margin-left: 140px;
   display: grid;
   gap: 20px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto;
   padding: 10px;
   padding-top: 70px;
 }
 
 .grid-item {
+  display: flex;
+  flex-direction: column;
   height: 416px;
-  width: 90%;
   background-color: #161616;
   border-radius: 5px;
   border: 1px solid rgb(85, 85, 85);
-  a:hover {
-    color: rgb(0, 104, 145);
-  }
+}
+
+.grid-item a:hover {
+  color: rgb(0, 104, 145);
 }
 
 .details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
+  padding: 25px;
 }
 
 .grid-item .photo {
@@ -157,22 +154,18 @@ header {
 .name {
   position: relative;
   font-size: 25px;
-  padding-left: 25px;
-  padding-top: 25px;
 }
 
 .registration_details {
   position: relative;
   font-size: 15px;
-  padding-left: 25px;
   padding-top: 25px;
 }
 
 .course_details {
-  position: absolute;
   text-decoration: none;
   font-size: 20px;
-  padding-left: 25px;
+  margin-left: 10px;
   color: rgb(0, 174, 243);
 }
 
@@ -181,7 +174,32 @@ header {
 
 }
 
-.arrow {
-  width: 16px;
-  height: 13px;
+@media only screen and (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .text3 {
+    margin-left: 140px;
+  }
+
+  .container2 a {
+    margin-left: 150px;
+  }
+
+  .courses {
+    margin-left: 150px;
+  }
+
+  .grid-container {
+    margin-left: 140px;
+    width: 80%;
+    grid-template-columns: auto auto auto;
+  }
+
+  .grid-item {
+    width: 90%;
+  }
 }
