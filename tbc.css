@@ -171,7 +171,80 @@ header {
 
 .course_details_wrapper {
   display: flex;
+}
 
+.course_details_wrapper .arrow {
+  color: #00AEF3;
+}
+
+.container4 {
+  width: 100%;
+  height: 363px;
+  background-color: #2b2b2b;
+}
+
+.project_partners {
+  color: #F4F4F4;
+  font-size: 30px;
+  padding-top: 40px;
+  padding-left: 200px;
+}
+
+.container5 {
+  width: 100%;
+  height: 484px;
+  background-color: #161616;
+}
+
+.questions {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  height: 80%;
+  padding-left: 250px;
+  padding-top: 80px;
+}
+
+.questions h2 {
+  color: #F4F4F4;
+}
+
+.questions a {
+  color:#00AEF3;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.questions a:hover {
+  color: rgb(170, 170, 170);
+}
+
+.container6 {
+  width: 100%;
+  height: 228px;
+  background-color: #2b2b2b;
+}
+
+.company_images {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 70px;
+}
+
+.tbc_image {
+  height: 30px;
+  width: auto;
+  padding-left: 200px;
+}
+
+.social_image {
+  padding-right: 200px;
+}
+
+.container6 p {
+  color: #F4F4F4;
+  padding-left: 200px;
+  padding-top: 15px;
 }
 
 @media only screen and (min-width: 600px) {
