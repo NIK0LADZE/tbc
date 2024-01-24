@@ -1,16 +1,34 @@
 /** Slider Logic  */
-const partners = document.querySelector('.partners');
+const partners = document.querySelectorAll('.partner');
 const sliderTracker = document.querySelector('.slider-tracker');
 const sliderLeftArrow = document.querySelector('.slider_arrow.left');
 const sliderRightArrow = document.querySelector('.slider_arrow.right');
 let currentPartner = 0;
 let sliderInterval;
+let isDesktop = true;
+
+window.addEventListener('resize', () => {
+    const screenWidth = window.screen.availWidth;
+    if (screenWidth < 1200 && isDesktop) {
+        isDesktop = false;
+        return;
+    }
+
+    if (screenWidth >= 1200 && !isDesktop) {
+        isDesktop = true;
+    }
+})
 
 const updateCurrentSlide = () => {
-    const currentPartnerSlide = partners.children[currentPartner];
+    const firstPartnerSlide = partners[0];
+    const currentPartnerSlide = partners[currentPartner];
     const sliderTrackerCurrentBullet = sliderTracker.children[currentPartner];
 
-    Array.from(partners.children).forEach((partner, index) => {
+    if (!isDesktop) {
+        // TODO: add logic
+    }
+
+    Array.from(partners).forEach((partner, index) => {
         partner.classList.remove('active');
         sliderTracker.children[index].classList.remove('active');
     });
