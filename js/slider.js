@@ -1,4 +1,4 @@
-const originalSlides = document.querySelectorAll('.partner');
+const originalSlides = document.querySelectorAll('.partner-slide');
 const sliderTracker = document.querySelectorAll('.slider-tracker li');
 const sliderLeftArrow = document.querySelector('.slider_arrow.left');
 const sliderRightArrow = document.querySelector('.slider_arrow.right');
@@ -22,7 +22,7 @@ window.addEventListener('resize', () => {
 });
 
 const showNextSlide = ({ direction = '' } = {}) => {
-    const slider = document.querySelector('.partners');
+    const slider = document.querySelector('.partners-slider');
     const [currentPartnerNode] = slider.children;
 
     // Delete all slides from slider
