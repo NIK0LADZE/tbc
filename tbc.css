@@ -9,6 +9,12 @@
 
 body {
   background-color: #1A1E1F;
+  color: #F4F4F4;
+}
+
+button {
+  background: none;
+  border: none;
 }
 
 ul {
@@ -279,26 +285,85 @@ header {
   opacity: 1;
 }
 
-.container5 {
-  width: 100%;
-  height: 484px;
+.faq-block {
+  padding-block: 50px;
   background-color: #161616;
 }
 
-.questions {
+.faq-heading {
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
-  width: 60%;
-  height: 80%;
-  padding-left: 250px;
-  padding-top: 80px;
 }
 
-.questions h2 {
+.faq-block h3 {
   color: #F4F4F4;
+  font-size: 24px;
+  font-weight: normal;
 }
 
-.questions a {
+.faq-block a {
+  color: #00AEF3;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.all-questions-desktop {
+  display: none;
+}
+
+.all-questions-mobile {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.faq-block a:hover {
+  color: #AAAAAA;
+}
+
+.question {
+  border-bottom: 1px solid rgb(53, 49, 49);
+}
+
+.question button {
+  width: 100%;
+  display: flex;
+  padding-block: 20px;
+  justify-content: space-between;
+  align-items: center;
+  color: #F4F4F4;
+  font-size: 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.questions .arrow {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.question .arrow.isExpanded {
+  transform: rotate(180deg);
+}
+
+.answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.5s;
+}
+
+.answer.isExpanded {
+  grid-template-rows: 1fr;
+}
+
+.answer > div {
+  grid-row: 1 / span 2;
+  overflow: hidden;
+}
+
+/* .questions a {
   color:#00AEF3;
   text-decoration: none;
   font-size: 25px;
@@ -306,7 +371,7 @@ header {
 
 .questions a:hover {
   color: rgb(170, 170, 170);
-}
+} */
 
 .container6 {
   width: 100%;
@@ -421,6 +486,18 @@ header {
   .course-status {
     font-size: 14px;
   }
+
+  .faq-block {
+    padding-block: 105px;
+  }
+
+  .all-questions-mobile {
+    display: none;
+  }
+
+  .all-questions-desktop {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -432,6 +509,14 @@ header {
 }
 
 @media only screen and (min-width: 1200px) {
+  .project-partners {
+    border: none;
+  }
+
+  .project-partners-title {
+    padding-top: 40px;
+  }
+
   .slider.container {
     max-width: 1010px;
     width: 83%;
