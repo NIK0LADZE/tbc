@@ -40,6 +40,11 @@ header {
   position: sticky;
   z-index: 10;
   overflow: hidden;
+  transition: 0.2s;
+}
+
+header.isHeaderHidden {
+  transform: translateY(-100%);
 }
 
 .header-items nav {
@@ -526,6 +531,10 @@ header {
 }
 
 @media only screen and (min-width: 980px) {
+  header.isHeaderHidden {
+    transform: none;
+  }
+
   .container {
     padding-inline: 0;
     width: 80%;
