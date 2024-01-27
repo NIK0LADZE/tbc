@@ -49,18 +49,19 @@ header.isHeaderHidden {
 
 .header-items nav {
   position: fixed;
-  width: 0;
+  width: 300px;
   background-color: #222222;
   height: 100vh;
   right: 0;
   top: 0;
   z-index: 12;
   overflow: hidden;
-  transition: 0.5s;
+  transform: translateX(100%);
 }
 
-.header-items nav.isMenuOpened {
-  width: 300px;
+.header-items nav.isOpened {
+  transform: translateX(0);
+  transition: 0.5s;
 }
 
 .container {
@@ -106,9 +107,14 @@ header.isHeaderHidden {
   border-radius: 4px;
 }
 
+.menu {
+  padding-top: 80px;
+}
+
 .menu li {
-  padding-right: 40px;
+  padding-right: 16px;
   padding-bottom: 40px;
+  min-width: 200px;
 }
 
 .menu li.active a,
@@ -122,6 +128,7 @@ header.isHeaderHidden {
   justify-content: space-between;
   width: 32px;
   height: 32px;
+  z-index: 20;
 }
 
 .burger-icon > div {
@@ -129,16 +136,35 @@ header.isHeaderHidden {
   height: 4px;
   background-color: #F4F4F4;
   border-radius: 5px;
+  transition: 0.3s;
 }
 
 .burger-icon > div:nth-child(2) {
   width: 100%;
 }
 
+.burger-icon.closeIcon > div:nth-child(1) {
+  position: relative;
+  transform: rotate(45deg);
+  left: 2px;
+  top: 8px;
+}
+
+.burger-icon.closeIcon > div:nth-child(2) {
+  width: 100%;
+  transform: rotate(-45deg);
+}
+
 .burger-icon > div:last-child {
   position: relative;
   left: 100%;
   transform: translateX(-100%);
+}
+
+.burger-icon.closeIcon > div:last-child {
+  transform: translateX(-100%) rotate(45deg);
+  width: 55%;
+  bottom: 8px;
 }
 
 .close-icon {
@@ -151,6 +177,7 @@ header.isHeaderHidden {
   position: relative;
   left: 100%;
   transform: translateX(-100%);
+  cursor: pointer;
 }
 
 .close-icon > div {
@@ -172,7 +199,7 @@ header.isHeaderHidden {
   transform: rotate(-45deg);
 }
 
-.menu-overlay {
+.overlay {
   display: none;
   position: fixed;
   width: 100vw;
@@ -184,7 +211,7 @@ header.isHeaderHidden {
   z-index: 11;
 }
 
-.menu-overlay.isMenuOpened {
+.overlay.isOpened {
   display: block;
 }
 
@@ -486,6 +513,37 @@ header.isHeaderHidden {
   color: #fff;
 }
 
+.terms-and-conditions-block {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  width: 300px;
+  transform: translateX(100%);
+  background: #2b2b2b;
+  z-index: 12;
+}
+
+.terms-and-conditions-block.isOpened {
+  transform: translateX(0);
+  transition: 0.5s;
+}
+
+.terms-and-conditions-block .close-icon {
+  left: unset;
+  transform: none;
+}
+
+.terms-container {
+  padding: 50px;
+}
+
+.terms-container:first-child {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 30px;
+}
+
 .tbc_image {
   height: 30px;
 }
@@ -547,10 +605,15 @@ header.isHeaderHidden {
   .menu {
     display: flex;
     justify-content: space-between;
+    padding: 0;
   }
 
-  .menu-overlay.isMenuOpened {
+  .overlay.isOpened {
     display: none;
+  }
+
+  .overlay.isOpened.terms {
+    display: block;
   }
 
   .header-items {
@@ -559,6 +622,14 @@ header.isHeaderHidden {
 
   .close-icon {
     display: none;
+  }
+
+  .terms-and-conditions-block {
+    width: 500px;
+  }
+
+  .terms-and-conditions-block .close-icon {
+    display: block;
   }
 
   .header-items nav {
@@ -570,14 +641,16 @@ header.isHeaderHidden {
     top: unset;
     z-index: unset;
     overflow: unset;
+    transform: translateX(0);
   }
 
-  .header-items nav.isMenuOpened {
-    width: auto;
+  .header-items nav.isOpened {
+    transform: translateX(0);
   }
 
   .menu li {
     padding: 0;
+    min-width: unset;
   }
 
   .menu li a {
@@ -601,7 +674,7 @@ header.isHeaderHidden {
 
   .hero-data {
     row-gap: 21px;
-    padding-block-end: 165px;
+    padding-block: 95px 135px;
   }
 
   .hero-title {

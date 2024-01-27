@@ -1,9 +1,9 @@
 const burgerIcon = document.querySelector('.burger-icon');
-const closeIcon = document.querySelector('.close-icon');
-const menuOverlay = document.querySelector('.menu-overlay');
+const menuCloseIcon = document.querySelector('nav .close-icon');
+const menuOverlay = document.querySelector('header .overlay');
 const menuNav = document.querySelector('nav');
 const header = document.querySelector('header');
-let isMenuOpened = false;
+let isOpened = false;
 let lastScrollTop = 0;
 
 window.addEventListener('scroll', function() {
@@ -23,27 +23,24 @@ window.addEventListener('scroll', function() {
 });
 
 const openOrCloseMenu = () => {
-    if (!isMenuOpened) {
-        menuOverlay.classList.remove('isMenuOpened');
-        menuNav.classList.remove('isMenuOpened');
+    if (!isOpened) {
+        menuOverlay.classList.remove('isOpened');
+        menuNav.classList.remove('isOpened');
+        burgerIcon.classList.remove('closeIcon')
         return;
     }
 
-    menuOverlay.classList.add('isMenuOpened');
-    menuNav.classList.add('isMenuOpened');
+    menuOverlay.classList.add('isOpened');
+    menuNav.classList.add('isOpened');
+    burgerIcon.classList.add('closeIcon')
 }
 
 burgerIcon.addEventListener('click', () => {
-    isMenuOpened = true;
-    openOrCloseMenu();
-});
-
-closeIcon.addEventListener('click', () => {
-    isMenuOpened = false;
+    isOpened = !isOpened;
     openOrCloseMenu();
 });
 
 menuOverlay.addEventListener('click', () => {
-    isMenuOpened = false;
+    isOpened = false;
     openOrCloseMenu();
 });
